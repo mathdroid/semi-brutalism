@@ -5,29 +5,22 @@
 
 {{!-- Everything inside the #author tags pulls data from the author --}}
 {{#author}}
-    <header class="main-header author-head {{#if cover}}" style="background-image: url({{cover}}){{else}}no-cover{{/if}}">
-        <nav class="main-nav overlay clearfix">
-            {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
-            {{#if @blog.navigation}}
-                <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
-            {{/if}}
-        </nav>
-    </header>
 
-    <section class="author-profile inner">
+    <section>
         {{#if image}}
-        <figure class="author-image">
+        <figure>
             <div class="img" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></div>
         </figure>
         {{/if}}
-        <h1 class="author-title">{{name}}</h1>
+        <h2>{{name}}</h2>
         {{#if bio}}
-            <h2 class="author-bio">{{bio}}</h2>
+            <h3 class="author-bio">{{bio}}</h3>
         {{/if}}
-        <div class="author-meta">
+        <div>
             {{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
             {{#if website}}<span class="author-link icon-link"><a href="{{website}}">{{website}}</a></span>{{/if}}
-            <span class="author-stats"><i class="icon-stats"></i> {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}</span>
+            <span><i class="icon-stats"></i> {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}</span>
+            <span><a class="twitter-follow-button" href="https://twitter.com/mathdroid">Follow @mathdroid</a> <a class="github-button" href="https://github.com/mathdroid" data-count-href="/mathdroid/followers" data-count-api="/users/mathdroid#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @mathdroid on GitHub">Follow @mathdroid</a></span>
         </div>
     </section>
 {{/author}}
