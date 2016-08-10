@@ -321,7 +321,7 @@ blockquote small {
     display: inline-block;
     margin: 0.8em 0 0.8em 1.5em;
     font-size: 0.9em;
-    color: #CCC;
+    color: #4a4a4a;
 }
 
 blockquote small:before { content: "\2014 \00A0"; }
@@ -432,8 +432,8 @@ table.plain tbody > tr:nth-child(odd) > th {
 }
 
 iframe, .fluid-width-video-wrapper {
-    display: block;
-    margin: 1.75em 0;
+    margin: 0 0;
+    max-width: 100%;
 }
 
 /* When a video is inside the fitvids wrapper, drop the
@@ -586,10 +586,14 @@ html {
 }
 
 body {
-  margin: 5rem 10%;
+  margin: 3rem 5%;
+  padding: 2rem 5%;
   max-width: 710px;
   font-family: Hack, monospace, sans-serif;
   /*font-size: 1rem;*/
+}
+
+header, main, aside, footer {
 }
 
 header {
@@ -601,7 +605,7 @@ h1 {
 }
 
 article {
-  margin-top: 10rem;
+  margin-bottom: 5rem;
   /*background-color: #fefefe;*/
 }
 
@@ -621,4 +625,24 @@ img {
   width: calc(100%); /* expand with to image + margins */
   min-width: 0;
   max-width: 112%; /* fallback when calc doesn't work */
+}
+
+a {
+
+  /* These are technically the same, but use both */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+
 }
