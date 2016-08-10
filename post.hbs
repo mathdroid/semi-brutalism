@@ -20,6 +20,7 @@
             {{content}}
         </section>
 
+        <hr />
         <footer>
 
         {{!-- Everything inside the #author tags pulls data from the author --}}
@@ -32,12 +33,10 @@
             {{/if}} -->
 
             <section>
-                <h4><a href="{{url}}">{{name}}</a></h4>
+                <h4>By <a href="{{url}}">{{name}}</a>.</h4>
 
                 {{#if bio}}
                     <p>{{bio}}</p>
-                {{else}}
-                    <p>Read <a href="{{url}}">more posts</a> by this author.</p>
                 {{/if}}
                 <div>
                     {{#if location}}<span class="icon-location">{{location}}</span>{{/if}}
