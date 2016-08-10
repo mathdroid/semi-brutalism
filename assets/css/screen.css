@@ -630,7 +630,7 @@ img {
   max-width: 112%; /* fallback when calc doesn't work */
 }
 
-a {
+body {
 
   /* These are technically the same, but use both */
   overflow-wrap: break-word;
