@@ -652,3 +652,10 @@ body {
 section {
   margin-bottom: 5rem;
 }
+
+h1:hover a, h2:hover a, h3:hover a, h4:hover a, h5:hover a, h6:hover a, a:hover section h2 {
+    display: inline-block;
+    color: #FE8C00;
+    background: -webkit-linear-gradient(left, #FE8C00, #FFFF64);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
