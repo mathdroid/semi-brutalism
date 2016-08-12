@@ -20,7 +20,6 @@
             {{content}}
         </section>
 
-        <hr />
         <footer>
 
         {{!-- Everything inside the #author tags pulls data from the author --}}
@@ -33,7 +32,7 @@
             {{/if}} -->
 
             <section>
-                <h4>By <a href="{{url}}">{{name}}</a>.</h4>
+                <p>Written by: <a href="{{url}}">{{name}}</a></p>
 
                 {{#if bio}}
                     <p>{{bio}}</p>
@@ -46,21 +45,49 @@
 
         {{/author}}
 
-            <section>
-                <h4>Share this post</h4>
-                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}"
-                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-                    <span class="hidden">Twitter</span>
+            <aside>
+              <h2>Share:</h2>
+              <div class="social-sharing" data-permalink="http://labs.carsonshold.com/social-sharing-buttons">
+
+                <!-- https://developers.facebook.com/docs/plugins/share-button/ -->
+                <a target="_blank" href="http://www.facebook.com/sharer.php?u={{url absolute="true"}}" class="share-facebook">
+                  <span class="soc icon icon-facebook" aria-hidden="true"></span>
+                  <span class="share-title">Share</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
-                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-                    <span class="hidden">Facebook</span>
+
+                <!-- https://dev.twitter.com/docs/intents -->
+                <a target="_blank" href="http://twitter.com/share?text={{encode title}}&amp;via=mathdroid&amp;url={{url absolute="true"}}" class="share-twitter">
+                  <span class="soc icon icon-twitter" aria-hidden="true"></span>
+                  <span class="share-title">Tweet</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url={{url absolute="true"}}"
-                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-                    <span class="hidden">Google+</span>
+
+                <!-- https://developers.google.com/+/web/share/ -->
+                <a target="_blank" href="http://plus.google.com/share?url={{url absolute="true"}}" class="share-google">
+                  <span class="soc icon icon-google" aria-hidden="true"></span>
+                  <span class="share-title">+1</span>
                 </a>
-            </section>
+
+                <!-- https://www.reddit.com/buttons -->
+                <a target="_blank" href="http://www.reddit.com/submit?url={{url absolute="true"}}&amp;title={{encode title}}" class="share-reddit">
+                  <span class="soc icon icon-reddit" aria-hidden="true"></span>
+                  <span class="share-title">Reddit</span>
+                </a>
+
+                <!-- https://developer.linkedin.com/plugins/share -->
+                <a target="_blank" href="http://www.linkedin.com/shareArticle?mini=true&url={{url absolute="true"}}&amp;title={{encode title}}" class="share-linkedin">
+                  <span class="soc icon icon-linkedin" aria-hidden="true"></span>
+                  <span class="share-title">Share</span>
+                </a>
+
+                <!-- http://blogs.skype.com/2015/11/04/introducing-share-button-effortless-sharing-that-sparks-richer-conversations/ -->
+                <a target="_blank" href="https://web.skype.com/share?url={{url absolute="true"}}&lang=en-us" class="share-skype">
+                  <span class="soc icon icon-skype" aria-hidden="true"></span>
+                  <span class="share-title">Share</span>
+                </a>
+
+              </div>
+            </aside>
+            <hr />
 
             {{!-- Email subscribe form at the bottom of the page --}}
             {{#if @labs.subscribers}}
