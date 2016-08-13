@@ -74,18 +74,6 @@
   <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
   <script type="text/javascript" src="{{asset "js/social-buttons.js"}}"></script>
   <script async defer src="https://buttons.github.io/buttons.js"></script>
-  <script>
-  $.post(
-      'https://graph.facebook.com',
-      {
-          id: '<?php echo $url; ?>',
-          scrape: true
-      },
-      function(response){
-          console.log(response);
-      }
-  );
-  </script>
 
 </body>
 </html>
