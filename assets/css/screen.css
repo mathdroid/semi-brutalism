@@ -355,13 +355,13 @@ pre {
     box-sizing: border-box;
     margin: 0 0 1.75em 0;
     width: 100%;
-    padding: 10px;
+    padding: 0;
     font-family: Hack, monospace, sans-serif;
     font-size: 0.9em;
     white-space: pre;
     overflow: auto;
     background: #f8f8ff;
-    border-left: black 2px solid;
+    border-left: #7f8 4px solid;
     border-radius: 3px;
 }
 
