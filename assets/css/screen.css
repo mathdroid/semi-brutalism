@@ -358,7 +358,7 @@ pre {
     padding: 0;
     font-family: Hack, monospace, sans-serif;
     font-size: 0.9em;
-    white-space: inherit;
+    white-space: pre;
     overflow: scroll;
     background: #f8f8ff;
     border-left: #7f8 4px solid;
@@ -367,7 +367,7 @@ pre {
 
 pre code, pre tt {
     font-size: inherit;
-    white-space: pre-wrap;
+    white-space: inherit;
     background: transparent;
     border: none;
     padding: 0;
