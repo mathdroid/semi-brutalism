@@ -1,133 +1,109 @@
 {{!< default}}
 
 {{!-- The comment above "< default" means - insert everything in this file into
-    the {{{body}}} of the default.hbs template, containing the blog header/footer. --}}
+the {{{body}}} of the default.hbs template, containing the blog header/footer. --}}
 
 {{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
 
 <main role="main">
-    <article class="{{post_class}}">
+  <article class="{{post_class}}">
 
-        <header>
-            <h1 >{{title}}</h1>
-            <section>
-                <time datetime="{{date format="YYYY-MM-DD"}}">⏰ {{date format="DD MMMM YYYY"}}</time> {{tags prefix=" on 🔖 "}}
-            </section>
-        </header>
+    <header>
+      <h1 >{{title}}</h1>
+      <section>
+        <time datetime="{{date format="YYYY-MM-DD"}}">⏰ {{date format="DD MMMM YYYY"}}</time> {{tags prefix=" on 🔖 "}}
+      </section>
+    </header>
 
-        <section>
-            {{content}}
-        </section>
+    <section>
+      {{content}}
+    </section>
 
-        <footer>
+    <footer>
+      <aside>
+        <h3>Share this post:</h3>
+        <div class="social-sharing" data-permalink="http://labs.carsonshold.com/social-sharing-buttons">
 
-        {{!-- Everything inside the #author tags pulls data from the author --}}
-        {{#author}}
+          <!-- https://developers.facebook.com/docs/plugins/share-button/ -->
+          <a href="https://www.facebook.com/sharer.php?u={{url absolute="true"}}" class="share-facebook" onclick="window.open(this.href, 'facebook-share', 'width=550,height=235');return false;">
+            <span class="soc icon icon-facebook" aria-hidden="true"></span>
+            <span class="share-title">Share</span>
+          </a>
 
-            <!-- {{#if image}}
-            <figure class="author-image">
-                <a class="img" href="{{url}}" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></a>
-            </figure>
-            {{/if}} -->
+          <!-- https://dev.twitter.com/docs/intents -->
+          <a href="https://twitter.com/share?text={{encode title}}&amp;via=mathdroid&amp;url={{url absolute="true"}}" class="share-twitter" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+            <span class="soc icon icon-twitter" aria-hidden="true"></span>
+            <span class="share-title">Tweet</span>
+          </a>
 
-            <section>
-                <p>Written by: <a href="{{url}}">{{name}}</a></p>
+          <!-- https://developers.google.com/+/web/share/ -->
+          <a href="https://plus.google.com/share?url={{url absolute="true"}}" class="share-google" onclick="window.open(this.href, 'google-plus-share', 'width=550,height=235');return false;">
+            <span class="soc icon icon-google" aria-hidden="true"></span>
+            <span class="share-title">+1</span>
+          </a>
 
-                {{#if bio}}
-                    <p>{{bio}}</p>
-                {{/if}}
-                <div>
-                    {{#if location}}<span class="icon-location">{{location}}</span>{{/if}}
-                    {{#if website}}<span class="icon-link"><a href="{{website}}">{{website}}</a></span>{{/if}}
-                </div>
-            </section>
+          <!-- https://www.reddit.com/buttons -->
+          <a href="https://www.reddit.com/submit?url={{url absolute="true"}}&amp;title={{encode title}}" class="share-reddit" onclick="window.open(this.href, 'reddit-share', 'width=550,height=235');return false;">
+            <span class="soc icon icon-reddit" aria-hidden="true"></span>
+            <span class="share-title">Reddit</span>
+          </a>
 
-        {{/author}}
+          <!-- https://developer.linkedin.com/plugins/share -->
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url={{url absolute="true"}}&amp;title={{encode title}}" class="share-linkedin" onclick="window.open(this.href, 'linkedin-share', 'width=550,height=235');return false;">
+            <span class="soc icon icon-linkedin" aria-hidden="true"></span>
+            <span class="share-title">Share</span>
+          </a>
 
-            <aside>
-              <h2>Share:</h2>
-              <div class="social-sharing" data-permalink="http://labs.carsonshold.com/social-sharing-buttons">
+          <!-- http://blogs.skype.com/2015/11/04/introducing-share-button-effortless-sharing-that-sparks-richer-conversations/ -->
+          <a href="https://web.skype.com/share?url={{url absolute="true"}}&amp;lang=en-us" class="share-skype" onclick="window.open(this.href, 'skype-share', 'width=550,height=235');return false;">
+            <span class="soc icon icon-skype" aria-hidden="true"></span>
+            <span class="share-title">Share</span>
+          </a>
 
-                <!-- https://developers.facebook.com/docs/plugins/share-button/ -->
-                <a href="https://www.facebook.com/sharer.php?u={{url absolute="true"}}" class="share-facebook" onclick="window.open(this.href, 'facebook-share', 'width=550,height=235');return false;">
-                  <span class="soc icon icon-facebook" aria-hidden="true"></span>
-                  <span class="share-title">Share</span>
-                </a>
+        </div>
+      </aside>
 
-                <!-- https://dev.twitter.com/docs/intents -->
-                <a href="https://twitter.com/share?text={{encode title}}&amp;via=mathdroid&amp;url={{url absolute="true"}}" class="share-twitter" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-                  <span class="soc icon icon-twitter" aria-hidden="true"></span>
-                  <span class="share-title">Tweet</span>
-                </a>
+      <hr />
+      {{!-- Email subscribe form at the bottom of the page --}}
+      {{#if @labs.subscribers}}
+      <section>
+        <h3>Subscribe to {{@blog.title}}</h3>
+        <p>Get the latest posts delivered right to your inbox.</p>
+        {{subscribe_form placeholder="Your email address"}}
+        <span>or subscribe <a href="http://cloud.feedly.com/#subscription/feed/{{@blog.url}}/rss/">via RSS</a> with Feedly!</span>
+      </section>
+      {{/if}}
 
-                <!-- https://developers.google.com/+/web/share/ -->
-                <a href="https://plus.google.com/share?url={{url absolute="true"}}" class="share-google" onclick="window.open(this.href, 'google-plus-share', 'width=550,height=235');return false;">
-                  <span class="soc icon icon-google" aria-hidden="true"></span>
-                  <span class="share-title">+1</span>
-                </a>
+    </footer>
 
-                <!-- https://www.reddit.com/buttons -->
-                <a href="https://www.reddit.com/submit?url={{url absolute="true"}}&amp;title={{encode title}}" class="share-reddit" onclick="window.open(this.href, 'reddit-share', 'width=550,height=235');return false;">
-                  <span class="soc icon icon-reddit" aria-hidden="true"></span>
-                  <span class="share-title">Reddit</span>
-                </a>
-
-                <!-- https://developer.linkedin.com/plugins/share -->
-                <a href="https://www.linkedin.com/shareArticle?mini=true&url={{url absolute="true"}}&amp;title={{encode title}}" class="share-linkedin" onclick="window.open(this.href, 'linkedin-share', 'width=550,height=235');return false;">
-                  <span class="soc icon icon-linkedin" aria-hidden="true"></span>
-                  <span class="share-title">Share</span>
-                </a>
-
-                <!-- http://blogs.skype.com/2015/11/04/introducing-share-button-effortless-sharing-that-sparks-richer-conversations/ -->
-                <a href="https://web.skype.com/share?url={{url absolute="true"}}&amp;lang=en-us" class="share-skype" onclick="window.open(this.href, 'skype-share', 'width=550,height=235');return false;">
-                  <span class="soc icon icon-skype" aria-hidden="true"></span>
-                  <span class="share-title">Share</span>
-                </a>
-
-              </div>
-            </aside>
-            <hr />
-
-            {{!-- Email subscribe form at the bottom of the page --}}
-            {{#if @labs.subscribers}}
-            <section>
-                <h3>Subscribe to {{@blog.title}}</h3>
-                <p>Get the latest posts delivered right to your inbox.</p>
-                {{subscribe_form placeholder="Your email address"}}
-                <span>or subscribe <a href="http://cloud.feedly.com/#subscription/feed/{{@blog.url}}/rss/">via RSS</a> with Feedly!</span>
-            </section>
-            {{/if}}
-
-        </footer>
-
-    </article>
+  </article>
 </main>
 
 {{!-- Links to Previous/Next posts --}}
 <aside>
-    {{#next_post}}
-    <p>
-      next article:
-    </p>
-    <a href="{{url}}">
-        <section class="post">
-            <h2>{{title}}</h2>
-            <p>{{excerpt words="19"}}&hellip;</p>
-        </section>
-    </a>
-    {{/next_post}}
-    {{#prev_post}}
-    <p>
-      previous article:
-    </p>
-    <a href="{{url}}">
-        <section class="post">
-            <h2>{{title}}</h2>
-            <p>{{excerpt words="19"}}&hellip;</p>
-        </section>
-    </a>
-    {{/prev_post}}
+  {{#next_post}}
+  <blockquote>
+    Next article:
+  </blockquote>
+  <a href="{{url}}">
+    <section class="post">
+      <h2>{{title}}</h2>
+      <p>{{excerpt words="19"}}&hellip;</p>
+    </section>
+  </a>
+  {{/next_post}}
+  {{#prev_post}}
+  <blockquote>
+    Previous article:
+  </blockquote>
+  <a href="{{url}}">
+    <section class="post">
+      <h2>{{title}}</h2>
+      <p>{{excerpt words="19"}}&hellip;</p>
+    </section>
+  </a>
+  {{/prev_post}}
 </aside>
 
 {{/post}}
