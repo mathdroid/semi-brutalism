@@ -359,7 +359,7 @@ pre {
     font-family: Hack, monospace, sans-serif;
     font-size: 0.9em;
     white-space: pre;
-    overflow: scroll;
+    overflow: auto;
     background: #f8f8ff;
     border-left: #7f8 4px solid;
     border-radius: 3px;
