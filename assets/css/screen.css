@@ -663,3 +663,19 @@ h1:hover a, h2:hover a, h3:hover a, h4:hover a, h5:hover a, h6:hover a, a:hover 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+main article footer p {
+  margin-bottom: 0;
+}
+
+main article footer input {
+  width: 100%;
+  padding: 0.5em 0em;
+  margin: 1em 0em;
+  text-align: center;
+}
+
+main article footer button {
+    width: 100%;
+    margin-bottom: 1.5em;
+}
