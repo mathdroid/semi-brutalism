@@ -589,7 +589,7 @@ html {
 body {
   margin: 3rem 5%;
   padding: 2rem 5%;
-  max-width: 640px;
+  max-width: 30em;
   font-family: Hack, monospace, sans-serif;
   /*font-size: 1rem;*/
 }
