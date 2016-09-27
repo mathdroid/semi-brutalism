@@ -584,22 +584,19 @@ body {
   /*font-size: 1rem;*/
 }
 
-body, body > * {
+body {
   width: 100%;
 }
 
-body > * > *, body > aside, body > div {
+body > header, body > main, body > footer {
+  width: inherit;
+}
+
+body > header > *, body > main > *, body > footer > *, body > aside, body > div {
   margin: 2rem 5%;
   padding: 2rem 5%;
   max-width: 30em;
 }
-
-body > aside > *, body > div > * {
-  margin: 0;
-  padding: 0;
-  max-width: 100%;
-}
-
 
 header {
   margin-bottom: 4rem;
