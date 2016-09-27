@@ -588,11 +588,11 @@ body {
   width: 100%;
 }
 
-body > header, body > main, body > footer {
+body > * {
   width: inherit;
 }
 
-body > header > *, body > main > *, body > footer > *, body > aside, body > div {
+body > * > * {
   margin-left: 5%;
   margin-right: 5%;
   padding-left: 5%;
