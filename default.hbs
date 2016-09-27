@@ -54,11 +54,13 @@
   <!-- {{navigation}} -->
 
   <header>
-    <h1><a href={{@blog.url}}>{{@blog.title}}</a></h1>
+    <section>
+      <h1><a href={{@blog.url}}>{{@blog.title}}</a></h1>
+    </section>
     <blockquote>{{@blog.description}}</blockquote>
-    <p>
+    <section>
       <span><a class="twitter-follow-button" href="https://twitter.com/mathdroid">Follow @mathdroid</a> <a class="github-button" href="https://github.com/mathdroid" data-count-href="/mathdroid/followers" data-count-api="/users/mathdroid#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @mathdroid on GitHub">Follow @mathdroid</a></span>
-    </p>
+    </section>
   </header>
   {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
   {{{body}}}

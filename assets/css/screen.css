@@ -593,8 +593,10 @@ body > header, body > main, body > footer {
 }
 
 body > header > *, body > main > *, body > footer > *, body > aside, body > div {
-  margin: 0 5%;
-  padding: 0 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
   max-width: 30em;
 }
 
