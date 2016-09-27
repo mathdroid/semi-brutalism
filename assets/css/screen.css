@@ -313,7 +313,7 @@ blockquote p {
 blockquote small {
     display: inline-block;
     margin: 0.8em 0 0.8em 1.5em;
-    /*font-size: 0.9em;*/
+    font-size: 0.9em;
     color: #4a4a4a;
 }
 
@@ -332,7 +332,7 @@ mark {
 code, tt {
     padding: 1px 3px;
     font-family: Hack, monospace, sans-serif;
-    /*font-size: 0.85em;*/
+    font-size: 0.85em;
     white-space: pre-wrap;
     border: #ddd 1px solid;
     background: #f8f8ff;
@@ -349,7 +349,7 @@ pre {
     width: 100%;
     padding: 0;
     font-family: Hack, monospace, sans-serif;
-    /*font-size: 0.9em;*/
+    font-size: 0.9em;
     white-space: pre;
     overflow: auto;
     background: #f8f8ff;
@@ -358,7 +358,7 @@ pre {
 }
 
 pre code, pre tt {
-    /*font-size: inherit;*/
+    font-size: inherit;
     white-space: inherit;
     background: transparent;
     border: none;
@@ -372,7 +372,7 @@ kbd {
     border: #CCC 1px solid;
     color: #666;
     text-shadow: #FFF 0 1px 0;
-    /*font-size: 0.9em;*/
+    font-size: 0.9em;
     font-weight: 700;
     background: #F4F4F4;
     border-radius: 4px;
@@ -675,4 +675,8 @@ main article footer input {
 main article footer button {
     width: 100%;
     margin-bottom: 1.5em;
+}
+
+article footer {
+  margin-bottom: 4em;
 }
