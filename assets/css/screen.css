@@ -586,6 +586,10 @@ body {
   /*font-size: 1rem;*/
 }
 
+body, body > * {
+  width: 100%;
+}
+
 body > * > * {
   max-width: 30em;
 }
@@ -677,7 +681,7 @@ main article footer button {
     margin-bottom: 1.5em;
 }
 
-footer {
+body > footer {
   background-color: #f1c40f;
   margin: 5em 0 10em 0;
 }
