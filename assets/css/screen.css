@@ -173,21 +173,6 @@ td, th{ padding: 0; }
 /* ==========================================================================
    2. General - Setting up some base styles
    ========================================================================== */
-   body, body > * {
-     width: 100%;
-   }
-
-   body > * > *, body > aside, body > div {
-     margin: 2rem 5%;
-     padding: 2rem 5%;
-     max-width: 30em;
-   }
-
-   body > aside > *, body > div > * {
-     margin: 0;
-     padding: 0;
-     max-width: 100%;
-   }   
 
 html {
     height: 100%;
@@ -599,7 +584,7 @@ body {
   /*font-size: 1rem;*/
 }
 
-/*body, body > * {
+body, body > * {
   width: 100%;
 }
 
@@ -613,7 +598,7 @@ body > aside > *, body > div > * {
   margin: 0;
   padding: 0;
   max-width: 100%;
-}*/
+}
 
 
 header {
