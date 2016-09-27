@@ -682,8 +682,17 @@ main article footer button {
 }
 
 body > footer {
+  color: #1b1b1b;
   background-color: #f1c40f;
-  margin: 5em 0 10em 0;
+  margin-top: 5em;
+  padding-top: 2em;
+  padding-bottom: 5em;
+}
+body > footer a {
+  color: #2b2b2b;
+}
+body > footer a:hover {
+  color: #1b1b1b;
 }
 article footer {
   margin-bottom: 4em;
