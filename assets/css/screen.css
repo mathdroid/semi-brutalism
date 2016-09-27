@@ -584,15 +584,22 @@ body {
   /*font-size: 1rem;*/
 }
 
-body, body > *:not(aside, div) {
+body, body > * {
   width: 100%;
 }
 
-body > *:not(aside, div) > *, body > aside, body > div {
+body > * > *, body > aside, body > div {
   margin: 2rem 5%;
   padding: 2rem 5%;
   max-width: 30em;
 }
+
+body > aside > *, body > div > * {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
 
 header {
   margin-bottom: 4rem;
