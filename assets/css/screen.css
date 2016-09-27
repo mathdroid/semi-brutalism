@@ -581,13 +581,13 @@ html {
 body {
   margin: 2rem 5%;
   padding: 2rem 5%;
-  max-width: 30em;
   /*font-family: Hack, monospace, sans-serif;*/
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   /*font-size: 1rem;*/
 }
 
-header, main, aside, footer {
+body > * > * {
+  max-width: 30em;
 }
 
 header {
@@ -677,6 +677,10 @@ main article footer button {
     margin-bottom: 1.5em;
 }
 
+footer {
+  background-color: #f1c40f;
+  margin: 5em 0 10em 0;
+}
 article footer {
   margin-bottom: 4em;
 }
