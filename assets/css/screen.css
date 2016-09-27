@@ -298,11 +298,13 @@ hr {
 }
 
 blockquote {
+
+    border-left: #4A4A4A 0.8em solid;
+    color: rgba(58, 65, 69, 0.75);
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    margin: 1.75em 0 1.75em -2.2em;
-    padding: 0 0 0 1.4em;
-    border-left: #4A4A4A 0.8em solid;
+    margin: 1.75em 0 1.75em -1.6em;
+    padding: 0 0 0 0.8em;
 }
 
 blockquote p {
@@ -593,18 +595,14 @@ body > * {
 }
 
 body > * > * {
-  margin-left: 5%;
-  margin-right: 5%;
   padding-left: 5%;
   padding-right: 5%;
   max-width: 30em;
 }
 
-header {
-  margin-bottom: 4rem;
-}
-body > header {
+body > header, body > main, body > section {
   padding-top: 2em;
+  padding-bottom: 2em;
 }
 
 article header {
@@ -691,6 +689,7 @@ main article footer button {
 }
 
 body > footer {
+  background: linear-gradient(to bottom right, #FE8C00, #FFFF64);
   color: #1b1b1b;
   background-color: #f1c40f;
   margin-top: 4em;
